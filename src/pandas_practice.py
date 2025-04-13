@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import chardet
 
 def creat_frame():
     # 创建一个字典来模拟数据
@@ -20,13 +19,7 @@ def creat_frame():
 
 def load_data():
     """任务1: 读取数据文件"""
-    # 检测文件编码
-    with open('data/data.csv', 'rb') as file:
-        rawdata = file.read()
-        result = chardet.detect(rawdata)
-        encoding = result['encoding']
-    
-    return pd.read_csv('data/data.csv', encoding=encoding)
+    return pd.read_csv('data/data.csv')
 
 def show_basic_info(data):
     """任务2: 显示数据基本信息"""
